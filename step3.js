@@ -16,7 +16,7 @@ function cat(path, out) {
 async function webCat(url, out) {
   try {
     let res = await axios.get(url);
-    handleOutput(resp.data, out);
+    handleOutput(res.data, out);
   } catch (err) {
     console.log(`Could not fetch: ${err}`);
     process.exit(1);
