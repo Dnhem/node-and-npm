@@ -9,14 +9,14 @@ function cat(path, out) {
       console.log(err);
       process.exit(1);
     }
-    console.log(`File contents: ${data}`);
+    handleOutput(data, out);
   });
 }
 
 async function webCat(url, out) {
   try {
     let res = await axios.get(url);
-    console.log(res.data);
+    handleOutput(resp.data, out);
   } catch (err) {
     console.log(`Could not fetch: ${err}`);
     process.exit(1);
